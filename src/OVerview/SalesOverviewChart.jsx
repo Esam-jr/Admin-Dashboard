@@ -6,6 +6,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import { motion } from "framer-motion";
 
@@ -53,6 +54,7 @@ function SalesOverviewChart() {
               }}
               itemStyle={{ color: "#E5E7EB" }}
             />
+            <Legend />
           </LineChart>
         </ResponsiveContainer>
       </div>

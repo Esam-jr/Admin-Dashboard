@@ -1,6 +1,6 @@
-import Header from "../common/Header";
+import Header from "../components/common/Header";
 import { motion } from "framer-motion";
-import StatCard from "../common/StatCard";
+import StatCard from "../components/common/StatCard";
 import { Package, TrendingUp, AlertTriangle, DollarSign } from "lucide-react";
 import ProductsTable from "../components/products/ProductsTable";
 import CatagoryDistrubutionChart from "../components/OVerview/CatagoryDistrubutionChart";

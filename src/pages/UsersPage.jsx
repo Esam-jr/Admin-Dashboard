@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { UserPlus, UserCheck, UserX, UsersIcon } from "lucide-react";
 
-import Header from "../common/Header";
-import StatCard from "../common/StatCard";
+import Header from "../components/common/Header";
+import StatCard from "../components/common/StatCard";
 import UsersTable from "../components/users/UsersTable";
 import UserGrowthChart from "../components/users/userGrowthChart";
 import UserDemographicsChart from "../components/users/UserDemographicsChart";

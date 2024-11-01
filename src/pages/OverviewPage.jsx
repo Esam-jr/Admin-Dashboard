@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 import Header from "../common/Header";
 import StatCard from "../common/StatCard";
-import SalesOverviewChart from "../OVerview/SalesOverviewChart";
-import CatagoryDistrubutionChart from "../OVerview/CatagoryDistrubutionChart";
-import SalesChannelChart from "../OVerview/SalesChannelChart";
+import SalesOverviewChart from "../components/OVerview/SalesOverviewChart";
+import CatagoryDistrubutionChart from "../components/OVerview/CatagoryDistrubutionChart";
+import SalesChannelChart from "../components/OVerview/SalesChannelChart";
 function OverviewPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">

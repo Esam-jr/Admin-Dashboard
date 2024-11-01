@@ -3,10 +3,10 @@ import { UserPlus, UserCheck, UserX, UsersIcon } from "lucide-react";
 
 import Header from "../common/Header";
 import StatCard from "../common/StatCard";
-import UsersTable from "../users/UsersTable";
-import UserGrowthChart from "../users/userGrowthChart";
-import UserDemographicsChart from "../users/UserDemographicsChart";
-import UserActivityHeatMap from "../users/UserActivityHeatMap";
+import UsersTable from "../components/users/UsersTable";
+import UserGrowthChart from "../components/users/userGrowthChart";
+import UserDemographicsChart from "../components/users/UserDemographicsChart";
+import UserActivityHeatMap from "../components/users/UserActivityHeatMap";
 
 const userStats = {
   totalUsers: 152845,

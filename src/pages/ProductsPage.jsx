@@ -2,9 +2,9 @@ import Header from "../common/Header";
 import { motion } from "framer-motion";
 import StatCard from "../common/StatCard";
 import { Package, TrendingUp, AlertTriangle, DollarSign } from "lucide-react";
-import ProductsTable from "../products/ProductsTable";
-import CatagoryDistrubutionChart from "../OVerview/CatagoryDistrubutionChart";
-import SalesTrendChart from "../products/SalesTrendChart";
+import ProductsTable from "../components/products/ProductsTable";
+import CatagoryDistrubutionChart from "../components/OVerview/CatagoryDistrubutionChart";
+import SalesTrendChart from "../components/products/SalesTrendChart";
 function ProductsPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">

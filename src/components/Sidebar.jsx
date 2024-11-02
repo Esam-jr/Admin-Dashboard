@@ -1,6 +1,8 @@
 import {
   BarChart2,
   DollarSign,
+  GithubIcon,
+  LinkedinIcon,
   Menu,
   Settings,
   ShoppingBag,
@@ -8,7 +10,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -26,8 +28,30 @@ const SIDEBAR_ITEMS = [
   },
   { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
+
 function Sidebar() {
   const [isSidebarOpen, setIssidebarOpen] = useState(true);
+
+  // Close the sidebar on smaller screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIssidebarOpen(false);
+      } else {
+        setIssidebarOpen(true);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <motion.div
       className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
@@ -47,10 +71,10 @@ function Sidebar() {
         <nav className="mt-8 flex-grow">
           {SIDEBAR_ITEMS.map((item) => (
             <Link key={item.href} to={item.href}>
-              <motion.dev className="flex items-center p-4 text-sm font-medium rounded-lg mb-2 hover:bg-gray-700 transition-colors">
+              <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg mb-2 hover:bg-gray-700 transition-colors">
                 <item.icon
                   size={20}
-                  style={{ color: item.color, minwidth: "20" }}
+                  style={{ color: item.color, minWidth: "20" }}
                 />
                 <AnimatePresence>
                   {isSidebarOpen && (
@@ -65,10 +89,33 @@ function Sidebar() {
                     </motion.span>
                   )}
                 </AnimatePresence>
-              </motion.dev>
+              </motion.div>
             </Link>
           ))}
         </nav>
+        <div
+          className={`mt-auto flex justify-between ${
+            !isSidebarOpen ? "flex-col" : ""
+          }`}
+        >
+          <a
+            href="https://github.com/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-200"
+          >
+            <LinkedinIcon className="text-white w-6 h-8 sm:w-8 sm:h-6" />
+          </a>
+          <a
+            href="https://linkedin.com/in/your-profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-200"
+            style={{ color: "#ffffff" }}
+          >
+            <GithubIcon className="text-white w-8 h-8 sm:w-6 sm:h-6" />
+          </a>
+        </div>
       </div>
     </motion.div>
   );

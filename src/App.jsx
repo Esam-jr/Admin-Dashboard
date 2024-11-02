@@ -6,6 +6,7 @@ import UsersPage from "./pages/UsersPage";
 import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalysticPage from "./pages/AnalysticPage";
+import SettingsPage from "./pages/SettingsPage";
 function App() {
   return (
     <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sales" element={<SalesPage />} />
         <Route path="/orders" element={<OrdersPage />} />
         <Route path="/analystics" element={<AnalysticPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </div>
   );

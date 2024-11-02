@@ -7,7 +7,7 @@ function Profile() {
         <img
           alt="Profile"
           className="rounded-full w-20 h-20 object-cover mr-4"
-          src="/profile.JPG"
+          src="/profile.jpeg"
         />
         <div>
           <h3 className="text-lg font-semibold text-gray-100">Esamel Sabir</h3>

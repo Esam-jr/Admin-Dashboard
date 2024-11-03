@@ -99,7 +99,7 @@ function Sidebar() {
           }`}
         >
           <a
-            href="https://github.com/your-profile"
+            href=" https://www.linkedin.com/in/esmael-sabir/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-200"
@@ -107,7 +107,7 @@ function Sidebar() {
             <LinkedinIcon className="text-white w-6 h-8 sm:w-8 sm:h-6" />
           </a>
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://github.com/Esam-jr "
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-200"

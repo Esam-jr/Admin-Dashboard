@@ -21,33 +21,33 @@ function OverviewCards() {
       {overviewData.map((item, index) => (
         <motion.div
           key={item.name}
-          className="bg-gray-800 bg-opacity-50 backdrop-blur-lg backdrop-filter shadow-lg p-6 rounded-xl border border-gray-700"
+          className="bg-surface-primary shadow-lg p-6 rounded-xl border border-border-primary"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
         >
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-medium text-gray-400">{item.name}</h3>
-              <p className="mt-1 text-xl font-semibold text-gray-100">
+              <h3 className="text-sm font-medium text-text-secondary">{item.name}</h3>
+              <p className="mt-1 text-xl font-semibold text-text-primary">
                 {item.value}
               </p>
             </div>
             <div
               className={`p-3 rounded-full bg-opacity-20 ${
-                item.change >= 0 ? "bg-green-500" : "bg-red-500"
+                item.change >= 0 ? "bg-accent-secondary" : "bg-accent-danger"
               }`}
             >
               <item.icon
                 className={`size-6 ${
-                  item.change >= 0 ? "text-green-500" : "text-red-500"
+                  item.change >= 0 ? "text-accent-secondary" : "text-accent-danger"
                 }`}
               />
             </div>
           </div>
           <div
             className={`mt-4 flex items-center ${
-              item.change >= 0 ? "text-green-500" : "text-red-500"
+              item.change >= 0 ? "text-accent-secondary" : "text-accent-danger"
             }`}
           >
             {item.change >= 0 ? (
@@ -58,7 +58,7 @@ function OverviewCards() {
             <span className="ml-1 text-sm font-medium">
               {Math.abs(item.change)}%
             </span>
-            <span className="ml-2 text-sm text-gray-400">vs last period</span>
+            <span className="ml-2 text-sm text-text-secondary">vs last period</span>
           </div>
         </motion.div>
       ))}

@@ -1,4 +1,3 @@
-import Header from "../components/common/Header";
 import OverviewCards from "../components/Analystic/OverviewCards";
 import RevenueChart from "../components/Analystic/RevenueChart";
 import ChannelPerformance from "../components/Analystic/ChannelPerformance";
@@ -10,7 +9,6 @@ import AIPoweredInsights from "../components/Analystic/AIPoweredInsights";
 function AnalysticPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">
-      <Header title={"Analystics Dashboard"} />
       <main className="max-w-7xl py-6 px-4 lg:px-8">
         <OverviewCards />
         <RevenueChart />

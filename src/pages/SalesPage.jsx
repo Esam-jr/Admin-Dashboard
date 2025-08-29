@@ -1,7 +1,6 @@
 import { CreditCard, DollarSign, ShoppingCart, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 import SalesoverviewAreaChart from "../components/sales/SalesoverviewAreaChart";
 import SalesByCatagoryChart from "../components/sales/SalesByCatagoryChart";
@@ -16,7 +15,6 @@ const salesStats = {
 function SalesPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">
-      <Header title="Sales Dashboard" />
       <main className="max-w-7xl py-6 px-4 lg:px-8">
         {/*SALES stats */}
         <motion.div
@@ -29,25 +27,25 @@ function SalesPage() {
             name="Total Revenue"
             icon={DollarSign}
             value={salesStats.totalRevenue}
-            color="#6366F1"
+            color="hsl(var(--accent-purple))"
           />
           <StatCard
             name="Avg. Order Value"
             icon={ShoppingCart}
             value={salesStats.averageOrderValue}
-            color="#10B981"
+            color="hsl(var(--accent-secondary))"
           />
           <StatCard
             name="Conversion Rate"
             icon={TrendingUp}
             value={salesStats.conversionRate}
-            color="#F59E0B"
+            color="hsl(var(--accent-warning))"
           />
           <StatCard
             name="Sales Growth"
             icon={CreditCard}
             value={salesStats.salesGrowth}
-            color="#EF4444"
+            color="hsl(var(--accent-danger))"
           />
         </motion.div>
         <SalesoverviewAreaChart />

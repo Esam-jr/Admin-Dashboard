@@ -25,18 +25,18 @@ function SalesoverviewAreaChart() {
 
   return (
     <motion.div
-      className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700 mb-8"
+      className="bg-surface-primary shadow-lg rounded-xl p-6 border border-border-primary mb-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
       <div className="flex  justify-between mb-6">
-        <h2 className="text-lg font-medium mb-4 text-gray-100">
+        <h2 className="text-lg font-medium mb-4 text-text-primary">
           Sales Overview
         </h2>
         <select
-          className="bg-gray-700 text-white rounded-md px-3 py-1 focus:outline-none focus:ring-2 
-          focus:ring-blue-500
+          className="bg-surface-secondary text-text-primary rounded-md px-3 py-1 focus:outline-none focus:ring-2 
+          focus:ring-accent-primary
           "
           value={selectedTimeRange}
           onChange={(e) => setSelectedTimeRange(e.target.value)}
@@ -50,25 +50,27 @@ function SalesoverviewAreaChart() {
       <div className="h-80">
         <ResponsiveContainer width={"100%"} height={"100%"}>
           <AreaChart data={monthlySalesData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
-            <XAxis dataKey="month" stroke="#9ca3af" />
-            <YAxis stroke="#9ca3af" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border-primary))" />
+            <XAxis dataKey="month" stroke="hsl(var(--text-secondary))" />
+            <YAxis stroke="hsl(var(--text-secondary))" />
             <Area
               type="monotone"
               dataKey="sales"
-              stroke="#6366F1"
+              stroke="hsl(var(--accent-primary))"
+              fill="hsl(var(--accent-primary))"
+              fillOpacity={0.3}
               strokeWidth={3}
-              dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
+              dot={{ fill: "hsl(var(--accent-primary))", strokeWidth: 2, r: 6 }}
               activeDot={{ r: 8, strokeWidth: 2 }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "rgba(31,41,55,0.8)",
-                borderColor: "#4B5563",
+                backgroundColor: "hsl(var(--surface-secondary))",
+                borderColor: "hsl(var(--border-primary))",
+                color: "hsl(var(--text-primary))"
               }}
-              itemStyle={{ color: "#E5E7EB" }}
             />
-            <Legend />
+            <Legend wrapperStyle={{color: "hsl(var(--text-secondary))"}}/>
           </AreaChart>
         </ResponsiveContainer>
       </div>

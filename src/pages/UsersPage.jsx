@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { UserPlus, UserCheck, UserX, UsersIcon } from "lucide-react";
 
-import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 import UsersTable from "../components/users/UsersTable";
 import UserGrowthChart from "../components/users/userGrowthChart";
@@ -17,7 +16,6 @@ const userStats = {
 function UsersPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">
-      <Header title="Users Page" />
       <main className="max-w-7xl py-6 px-4 lg:px-8">
         {/* stats */}
         <motion.div
@@ -30,25 +28,25 @@ function UsersPage() {
             name="Total Users"
             icon={UsersIcon}
             value={userStats.totalUsers.toLocaleString()}
-            color="#6366F1"
+            color="hsl(var(--accent-purple))"
           />
           <StatCard
             name="New Users Today"
             icon={UserPlus}
             value={userStats.newUsersToday}
-            color="#10B981"
+            color="hsl(var(--accent-secondary))"
           />
           <StatCard
             name="Active Users"
             icon={UserCheck}
             value={userStats.activeUsers.toLocaleString()}
-            color="#F59E0B"
+            color="hsl(var(--accent-warning))"
           />
           <StatCard
             name="Churn Rate"
             icon={UserX}
             value={userStats.churnRate}
-            color="#EF4444"
+            color="hsl(var(--accent-danger))"
           />
         </motion.div>
         <UsersTable />

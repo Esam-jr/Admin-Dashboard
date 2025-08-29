@@ -22,12 +22,12 @@ const customerSegmentationData = [
 const CustomerSegmentation = () => {
   return (
     <motion.div
-      className="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700"
+      className="bg-surface-primary shadow-lg rounded-xl p-6 border border-border-primary"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6 }}
     >
-      <h2 className="text-xl font-semibold text-gray-100 mb-4">
+      <h2 className="text-xl font-semibold text-text-primary mb-4">
         Customer Segmentation
       </h2>
       <div style={{ width: "100%", height: 300 }}>
@@ -38,30 +38,30 @@ const CustomerSegmentation = () => {
             outerRadius="80%"
             data={customerSegmentationData}
           >
-            <PolarGrid stroke="#374151" />
-            <PolarAngleAxis dataKey="subject" stroke="#9CA3AF" />
-            <PolarRadiusAxis angle={30} domain={[0, 150]} stroke="#9CA3AF" />
+            <PolarGrid stroke="hsl(var(--border-primary))" />
+            <PolarAngleAxis dataKey="subject" stroke="hsl(var(--text-secondary))" />
+            <PolarRadiusAxis angle={30} domain={[0, 150]} stroke="hsl(var(--text-secondary))" />
             <Radar
               name="Segment A"
               dataKey="A"
-              stroke="#8B5CF6"
-              fill="#8B5CF6"
+              stroke="hsl(var(--accent-purple))"
+              fill="hsl(var(--accent-purple))"
               fillOpacity={0.6}
             />
             <Radar
               name="Segment B"
               dataKey="B"
-              stroke="#10B981"
-              fill="#10B981"
+              stroke="hsl(var(--accent-secondary))"
+              fill="hsl(var(--accent-secondary))"
               fillOpacity={0.6}
             />
-            <Legend />
+            <Legend wrapperStyle={{color: "hsl(var(--text-secondary))"}}/>
             <Tooltip
               contentStyle={{
-                backgroundColor: "rgba(31, 41, 55, 0.8)",
-                borderColor: "#4B5563",
+                backgroundColor: "hsl(var(--surface-secondary))",
+                borderColor: "hsl(var(--border-primary))",
+                color: "hsl(var(--text-primary))"
               }}
-              itemStyle={{ color: "#E5E7EB" }}
             />
           </RadarChart>
         </ResponsiveContainer>

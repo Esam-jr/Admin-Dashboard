@@ -7,24 +7,26 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalysticPage from "./pages/AnalysticPage";
 import SettingsPage from "./pages/SettingsPage";
+import Header from "./components/common/Header";
+
 function App() {
   return (
-    <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
-      {/* BG */}
-      <div className="flex inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
-        <div className="absolute inset-0 backdrop-blur-sm" />
-      </div>
+    <div className="flex h-screen bg-background text-text-primary overflow-hidden">
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<OverviewPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/users" element={<UsersPage />} />
-        <Route path="/sales" element={<SalesPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/analystics" element={<AnalysticPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-      </Routes>
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Header />
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+          <Routes>
+            <Route path="/" element={<OverviewPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/sales" element={<SalesPage />} />
+            <Route path="/orders" element={<OrdersPage />} />
+            <Route path="/analystics" element={<AnalysticPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }

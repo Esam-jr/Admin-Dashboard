@@ -4,17 +4,20 @@ import ToggleSwitch from "./ToggleSwitch";
 import { useState } from "react";
 
 function Security() {
-  const [SecurityAuth, setSecurityAuth] = useState(false);
+  const [securityAuth, setSecurityAuth] = useState(false);
   return (
-    <SettingSection icon={Lock} title={"Security"}>
+    <SettingSection icon={Lock} title="Security">
       <ToggleSwitch
-        label={"Two-factore Authenthication"}
-        isOn={SecurityAuth}
-        onToggle={() => setSecurityAuth(!SecurityAuth)}
+        label="Two-Factor Authentication"
+        isOn={securityAuth}
+        onToggle={() => setSecurityAuth(!securityAuth)}
       />
-      <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-200 w-full sm:w-auto">
-        Edit Profile
-      </button>
+      <div className="pt-4 border-t border-border-primary flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p className="text-text-secondary">Change your password</p>
+        <button className="bg-surface-secondary hover:bg-border-primary text-text-primary font-bold py-2 px-6 rounded-lg transition duration-200 w-full sm:w-auto">
+          Change Password
+        </button>
+      </div>
     </SettingSection>
   );
 }

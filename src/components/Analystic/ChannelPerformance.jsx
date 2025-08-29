@@ -17,23 +17,23 @@ const channelData = [
   { name: "Email", value: 2390 },
 ];
 const COLORS = [
-  "#8884d8",
-  "#82ca9d",
-  "#ffc658",
-  "#ff8042",
-  "#0088FE",
-  "#00C49F",
+  "hsl(var(--accent-primary))",
+  "hsl(var(--accent-secondary))",
+  "hsl(var(--accent-warning))",
+  "hsl(var(--accent-danger))",
+  "hsl(var(--accent-purple))",
+  "hsl(var(--accent-pink))",
 ];
 
 const ChannelPerformance = () => {
   return (
     <motion.div
-      className="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700"
+      className="bg-surface-primary shadow-lg rounded-xl p-6 border border-border-primary"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <h2 className="text-xl font-semibold text-gray-100 mb-4">
+      <h2 className="text-xl font-semibold text-text-primary mb-4">
         Channel Performance
       </h2>
       <div style={{ width: "100%", height: 300 }}>
@@ -44,7 +44,7 @@ const ChannelPerformance = () => {
               cx="50%"
               cy="50%"
               outerRadius={80}
-              fill="#8884d8"
+              fill="hsl(var(--accent-primary))"
               dataKey="value"
               label={({ name, percent }) =>
                 `${name} ${(percent * 100).toFixed(0)}%`
@@ -59,12 +59,12 @@ const ChannelPerformance = () => {
             </Pie>
             <Tooltip
               contentStyle={{
-                backgroundColor: "rgba(31, 41, 55, 0.8)",
-                borderColor: "#4B5563",
+                backgroundColor: "hsl(var(--surface-secondary))",
+                borderColor: "hsl(var(--border-primary))",
+                color: "hsl(var(--text-primary))"
               }}
-              itemStyle={{ color: "#E5E7EB" }}
             />
-            <Legend />
+            <Legend wrapperStyle={{color: "hsl(var(--text-secondary))"}} />
           </PieChart>
         </ResponsiveContainer>
       </div>

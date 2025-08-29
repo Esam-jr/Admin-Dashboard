@@ -1,7 +1,6 @@
 import { CheckCircle, Clock, DollarSign, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
 import DailyOrders from "../components/orders/DailyOrders";
 import OrderDistribution from "../components/orders/OrderDistribution";
@@ -16,7 +15,6 @@ const orderStats = {
 function OrdersPage() {
   return (
     <div className=" flex-1 overflow-auto relative z-10">
-      <Header title={"Orders"} />
       <main className="max-w-7xl py-6 px-4 lg:px-8">
         {/*SALES stats */}
         <motion.div
@@ -29,25 +27,25 @@ function OrdersPage() {
             name="Total Orders"
             icon={ShoppingBag}
             value={orderStats.totalOrders}
-            color="#6366F1"
+            color="hsl(var(--accent-purple))"
           />
           <StatCard
             name="Pending Orders"
             icon={Clock}
             value={orderStats.pendingOrders}
-            color="#F59E0B"
+            color="hsl(var(--accent-warning))"
           />
           <StatCard
             name="Completed Orders"
             icon={CheckCircle}
             value={orderStats.completedOrders}
-            color="#10B981"
+            color="hsl(var(--accent-secondary))"
           />
           <StatCard
             name="Total Revenue"
             icon={DollarSign}
             value={orderStats.totalRevenue}
-            color="#EF4444"
+            color="hsl(var(--accent-danger))"
           />
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-2 mb-8 gap-8">

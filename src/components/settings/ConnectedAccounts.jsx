@@ -1,70 +1,47 @@
 import { useState } from "react";
 import SettingSection from "./SettingSection";
-import { HelpCircle, Plus } from "lucide-react";
+import { Link, Plus } from "lucide-react";
 
 const ConnectedAccounts = () => {
   const [connectedAccounts, setConnectedAccounts] = useState([
-    {
-      id: 1,
-      name: "Google",
-      connected: true,
-      icon: "/google.png",
-    },
-    {
-      id: 2,
-      name: "Facebook",
-      connected: false,
-      icon: "/facebook.svg",
-    },
-    {
-      id: 3,
-      name: "Twitter",
-      connected: true,
-      icon: "/x.png",
-    },
+    { id: 1, name: "Google", connected: true, icon: "/google.png" },
+    { id: 2, name: "Facebook", connected: false, icon: "/facebook.svg" },
+    { id: 3, name: "Twitter", connected: true, icon: "/x.png" },
   ]);
+
+  const toggleConnection = (id) => {
+    setConnectedAccounts(
+      connectedAccounts.map((acc) =>
+        acc.id === id ? { ...acc, connected: !acc.connected } : acc
+      )
+    );
+  };
+
   return (
-    <SettingSection icon={HelpCircle} title={"Connected Accounts"}>
+    <SettingSection icon={Link} title="Connected Accounts">
       {connectedAccounts.map((account) => (
-        <div
-          key={account.id}
-          className="flex items-center justify-between py-3"
-        >
-          <div className="flex gap-1">
-            <img
-              src={account.icon}
-              alt="Social img"
-              className="size-6 object-cover rounded-full mr-2"
-            />
-            <span className="text-gray-300">{account.name}</span>
+        <div key={account.id} className="flex items-center justify-between py-2">
+          <div className="flex items-center gap-3">
+            <img src={account.icon} alt={account.name} className="w-6 h-6 object-contain" />
+            <span className="text-text-primary">{account.name}</span>
           </div>
           <button
-            className={`px-3 py-1 rounded ${
+            className={`px-4 py-1 text-sm font-semibold rounded-md transition duration-200 ${
               account.connected
-                ? "bg-green-600 hover:bg-green-700"
-                : "bg-gray-600 hover:bg-gray-700"
-            } transition duration-200`}
-            onClick={() => {
-              setConnectedAccounts(
-                connectedAccounts.map((acc) => {
-                  if (acc.id === account.id) {
-                    return {
-                      ...acc,
-                      connected: !acc.connected,
-                    };
-                  }
-                  return acc;
-                })
-              );
-            }}
+                ? "bg-accent-secondary/20 text-accent-secondary hover:bg-accent-secondary/30"
+                : "bg-surface-secondary hover:bg-border-primary text-text-primary"
+            }`}
+            onClick={() => toggleConnection(account.id)}
           >
-            {account.connected ? "Connected" : "Connect"}
+            {account.connected ? "Disconnect" : "Connect"}
           </button>
         </div>
       ))}
-      <button className="mt-4 flex items-center text-indigo-400 hover:text-indigo-300 transition duration-200">
-        <Plus size={18} className="mr-2" /> Add Account
-      </button>
+      <div className="pt-4 border-t border-border-primary">
+        <button className="mt-2 flex items-center text-accent-primary hover:text-accent-primary/80 transition duration-200">
+          <Plus size={18} className="mr-2" /> Add Account
+        </button>
+      </div>
     </SettingSection>
   );
 };

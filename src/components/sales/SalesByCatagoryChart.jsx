@@ -15,20 +15,26 @@ const salesByCategory = [
   { name: "Others", value: 150 },
 ];
 
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042", "#0088FE"];
+const COLORS = [
+  "hsl(var(--accent-primary))",
+  "hsl(var(--accent-secondary))",
+  "hsl(var(--accent-warning))",
+  "hsl(var(--accent-danger))",
+  "hsl(var(--accent-purple))",
+];
 
 function SalesByCatagoryChart() {
   return (
     <motion.div
-      className="bg-gray-800 bg-opacity-50 backdrop-blur-md shadow-lg rounded-xl p-6 border border-gray-700"
+      className="bg-surface-primary shadow-lg rounded-xl p-6 border border-border-primary"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <h1 className="text-lg font-medium mb-4 text-gray-100">
+      <h1 className="text-lg font-medium mb-4 text-text-primary">
         Sales By Catagory
       </h1>
-      <div className="h-80 border border-gray-600 rounded-lg p-4">
+      <div className="h-80 rounded-lg p-4">
         <ResponsiveContainer width={"100%"} height={"100%"}>
           <PieChart>
             <Pie
@@ -48,16 +54,15 @@ function SalesByCatagoryChart() {
                   fill={COLORS[index % COLORS.length]}
                 />
               ))}
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "rgba(31,41,55,0.8)",
-                  borderColor: "#4B5563",
-                }}
-                itemStyle={{ color: "#E5E7EB" }}
-              />
             </Pie>
-            <Tooltip />
-            <Legend />
+            <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--surface-secondary))",
+                  borderColor: "hsl(var(--border-primary))",
+                  color: "hsl(var(--text-primary))"
+                }}
+              />
+            <Legend wrapperStyle={{color: "hsl(var(--text-secondary))"}}/>
           </PieChart>
         </ResponsiveContainer>
       </div>

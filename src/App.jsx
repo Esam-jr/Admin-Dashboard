@@ -8,6 +8,7 @@ import OrdersPage from "./pages/OrdersPage";
 import AnalysticPage from "./pages/AnalysticPage";
 import SettingsPage from "./pages/SettingsPage";
 import Header from "./components/common/Header";
+import CommandPalette from "./components/common/CommandPalette";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           </Routes>
         </main>
       </div>
+      <CommandPalette />
     </div>
   );
 }

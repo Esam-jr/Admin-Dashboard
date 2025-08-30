@@ -8,18 +8,16 @@ import AIPoweredInsights from "../components/Analystic/AIPoweredInsights";
 
 function AnalysticPage() {
   return (
-    <div className=" flex-1 overflow-auto relative z-10">
-      <main className="max-w-7xl py-6 px-4 lg:px-8">
-        <OverviewCards />
-        <RevenueChart />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <ChannelPerformance />
-          <ProductPerformance />
-          <UserRetention />
-          <CustomerSegmentation />
-        </div>
-        <AIPoweredInsights />
-      </main>
+    <div className="space-y-8">
+      <OverviewCards />
+      <RevenueChart />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <ChannelPerformance />
+        <ProductPerformance />
+        <UserRetention />
+        <CustomerSegmentation />
+      </div>
+      <AIPoweredInsights />
     </div>
   );
 }

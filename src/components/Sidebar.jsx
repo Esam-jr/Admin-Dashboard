@@ -22,7 +22,7 @@ const SIDEBAR_ITEMS = [
   { name: "Users", icon: Users, href: "/users" },
   { name: "Sales", icon: DollarSign, href: "/sales" },
   { name: "Orders", icon: ShoppingCart, href: "/orders" },
-  { name: "Analytics", icon: TrendingUp, href: "/analystics" },
+  { name: "Analytics", icon: TrendingUp, href: "/analytics" },
   { name: "Settings", icon: Settings, href: "/settings" },
 ];
 

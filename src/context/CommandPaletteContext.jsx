@@ -11,7 +11,7 @@ const commands = [
     { name: 'Users', href: '/users', section: 'Navigation' },
     { name: 'Sales', href: '/sales', section: 'Navigation' },
     { name: 'Orders', href: '/orders', section: 'Navigation' },
-    { name: 'Analytics', href: '/analystics', section: 'Navigation' },
+    { name: 'Analytics', href: '/analytics', section: 'Navigation' },
     { name: 'Settings', href: '/settings', section: 'Navigation' },
     { name: 'Toggle Theme', action: 'toggleTheme', section: 'Actions' },
 ];
